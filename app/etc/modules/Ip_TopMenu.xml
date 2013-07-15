@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+		<Ip_TopMenu>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Ip_TopMenu>
+    </modules>
+</config>

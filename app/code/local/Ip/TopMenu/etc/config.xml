@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+ 
+    <modules>
+        <Ip_TopMenu>
+            <version>0.1.0</version>
+        </Ip_TopMenu>
+    </modules>
+ 
+    <global>
+ 
+        <helpers>
+            <topMenu>
+                <class>Ip_TopMenu_Helper</class>
+            </topMenu>
+        </helpers>
+
+        <models>
+            <topMenu>
+                <class>Ip_TopMenu_Model</class>
+            </topMenu>
+            <catalog>
+                <rewrite>
+                    <observer>Ip_TopMenu_Model_Catalog_Observer</observer>
+                </rewrite>
+            </catalog>
+        </models>
+        <blocks>
+            <topMenu>
+                <class>Ip_TopMenu_Block</class>
+            </topMenu>
+            <adminhtml>
+                <rewrite>
+                    <cms_page_edit_tab_main>Ip_TopMenu_Block_Adminhtml_Cms_Menu</cms_page_edit_tab_main>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+
+        <resources>
+            <topMenu_setup>
+                <setup>
+                    <module>Ip_TopMenu</module>
+                    <class>Ip_TopMenu_Model_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </topMenu_setup>
+
+            <topMenu_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </topMenu_write>
+
+            <topMenu_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </topMenu_read>
+        </resources>
+ 
+    </global>
+    
+</config>
