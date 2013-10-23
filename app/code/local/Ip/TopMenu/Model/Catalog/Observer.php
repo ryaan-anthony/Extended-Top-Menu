@@ -35,7 +35,7 @@ class Ip_TopMenu_Model_Catalog_Observer extends Mage_Catalog_Model_Observer
     protected function getCmsPages($parent = null)
     {
         $results = array();
-        $collection = Mage::getModel('cms/page')->getCollection();
+        $collection = Mage::getModel('cms/page')->getCollection()->setOrder('include_in_nav_position', 'ASC');
         foreach($collection as $item){
             if(!$item->getData('include_in_nav')){continue;}
             if(($parent==null && !$item->getData('include_in_nav_parent'))|| $parent == $item->getData('include_in_nav_parent')){
